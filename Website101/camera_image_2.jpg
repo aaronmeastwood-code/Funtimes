@@ -1,0 +1,2267 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <!-- G-1KGDHWB09D is the MeasurementId of web data stream for PROD GA4 property-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KGDHWB09D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-1KGDHWB09D');
+    </script>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <script src="/scripts/qld-traffic/settings.js?b=1752627244288">
+    </script>
+
+    <script language="javascript">
+        if (this.window.addNoIndexMetaTag) {
+            var link = document.createElement('meta');
+            link.setAttribute('name', 'robots');
+            link.content = 'noindex';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+    </script>
+    
+    <meta name="apple-itunes-app" content="app-id=1195764067" />
+    <link rel="manifest" href="scripts/manifest.json"> 
+    <title>Road Condition Information - QLDTraffic</title>
+
+    <meta name="owner" content="Department of Traffic and Main Roads" />
+    <meta name="title" content="Road Condition Information - QLDTraffic" />
+    <meta name="description" content="Check - plan - go - with up-to-date traffic and travel information on road conditions, incidents, vehicle crashes, emergency roadworks, special events, road closures and congestion state-wide." />
+    <link href="/favicon.ico" rel="shortcut icon">
+    
+    <meta property="og:title" content="Road Condition Information - QLDTraffic" />
+    <meta property="og:image" content="https://data.qldtraffic.qld.gov.au/QLDTrafficIcon-social.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/index.html" />
+
+
+    <!-- Tags for twitter -->
+    <meta name="twitter:title" content="Road Condition Information - QLDTraffic" />
+    <meta name="twitter:description" content="Check - plan - go - with up-to-date traffic and travel information on road conditions, incidents, vehicle crashes, emergency roadworks, special events, road closures and congestion state-wide." />
+    <meta name="twitter:image" content="https://data.qldtraffic.qld.gov.au/QLDTrafficIcon-social.png" />
+
+    <!-- Qld Traffic Custom Theme Less -->
+    
+    <link href="/styles/map-view.css?b=1752627244288" rel="stylesheet" /> 
+    <!-- <link href="Styles/animate.min.css" rel="stylesheet" /> -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+</head>
+
+<body id="qld-gov-au">
+  <div>
+    <div id="access" class="sr-only" aria-labelledby="landmark-access">
+      <h2 id="landmark-access" class="sr-only">Skip links and keyboard navigation</h2>
+      <ul>
+        <li>
+          <a class="sr-only-focusable" href="#content">Skip to content</a>
+        </li>
+        <li>
+          <a class="sr-only-focusable" href="#nav-site">Skip to navigation</a>
+        </li>
+        <li>
+          <a class="sr-only-focusable" href="#footer">Skip to footer</a>
+        </li>
+        <li>
+          <a class="sr-only-focusable" href="#MyLocation">Set your location</a>
+        </li>
+        <li>
+          <a class="sr-only-focusable" href="http://www.qld.gov.au/help/accessibility/keyboard.html#section-aria-keyboard-navigation">Use tab and cursor keys to move around the page (more information)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- Begin header content -->
+  <header class="header">
+    <div id="changeLocation" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">Change location</h4>
+          </div>
+          <div class="modal-body">
+            <p>Set your location to see more localised information on this website</p>
+            <input type="text" id="MyLocationInput" class="form-control input-sm" placeholder="Enter a suburb or postcode" data-bind="userLocation: userLocation">
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+            <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Change location">Change</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <div id="header" role="banner" class="container-fluid fadeIn" aria-labelledby="landmark-site-header">
+
+      <h2 id="landmark-site-header" class="sr-only">Site Header</h2>
+
+      <div class="row">
+        <div class="col-xs-6 col-md-4">
+            <div id="site-branding" class="row">
+                <div class="col-xs-12 col-md-12">
+                    <img src="/images/cue/QLDTrafficIcon.svg" alt="" height="50" />
+                    <ul class="nav nav-tabs">
+                        <!-- ko with: announcementModel -->
+                        <li id="announcementIndicator" role="presentation" style="display: none;" data-bind="visible: hasAnnouncement">
+                            <a href="#" data-bind="
+                                click: toggleAnnouncement,
+                                modalOrOverlay: showAnnouncement,
+                                modalOrOverlayContent: announcementContent"><i class="glyphicons glyphicons-warning-sign" aria-hidden="true"></i></a>
+                        </li>
+                        <!-- /ko -->
+                    </ul>
+                </div>
+                <!-- ko with: lookupInfoModel -->
+                <a href="#" style="display: none" data-bind="
+                            lookupInfoModalOrOverlay: showLookupInfo,
+                            lookupInfoModalOrOverlayContent: lookupInfoContent"><i class="glyphicons glyphicons-warning-sign" aria-hidden="true"></i></a>
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-8">
+          <div class="row">
+            <div class="navbar navbar-default">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                  aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <ul id="tools" role="navigation" class="collapse navbar-collapse">
+                <li class="first-child">
+                  <a accesskey="3" href="/more/sitemap.html">Site map</a> | <a accesskey="4" href="/more/Contact-Us">Contact us</a> | <a href="/more/Help">Help</a>
+                </li>
+                <li class="last-child">
+                  <ul id="MyLocation" class="nav-location pull-right">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Change location
+                        <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        <li>
+                          <input type="text" id="MyLocationInput" class="form-control input-sm" placeholder="Enter a suburb or postcode" data-bind="userLocation: userLocation">
+                        </li>
+                        <li>
+                          <p>Set your location to see more localised information on this website</p>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="location">My location:&nbsp;
+                      <span data-bind="text: userLocationName() ? userLocationName() : 'Unknown'">Unknown</span>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        
+    </div>
+
+      
+
+    <!-- Navbar -->
+    <div id="nav-site" aria-role="navigation" aria-labelledby="landmark-site-nav" style="margin-bottom: -10px;">
+      <h2 id="landmark-site-nav" class="sr-only">Site navigation</h2>
+      <nav class="navbar-default animated fadeIn">
+        <div class="container-fluid">
+          <div id="navbar" class="collapse navbar-collapse">
+            <div class="row">
+              <div class="col-md-12 col-lg-12">
+                <ul class="nav navbar-nav">
+                  
+                  <li class="active">
+                    <a href="/index.html" accesskey="1">Home</a>
+                  </li>
+                  
+                  <li class="">
+                    <a href="/listview.html" accesskey="7">List view</a>
+                  </li>
+                  
+                  <li class="">
+                    <a href="/cameras.html" accesskey="8">Cameras</a>
+                  </li>
+                  
+                  <li class="">
+                    <a href="/publictransport.html" accesskey="9">Public transport</a>
+                  </li>
+                  
+                  <li class="">
+                    <a href="/lookup.html" accesskey="6">Road Lookup</a>
+                  </li>
+                  
+                  <li class="">
+                    <a href="/more/index.html" accesskey="">More information</a>
+                  </li>
+                   
+                  <li class="hidden-xs hidden-sm" data-bind="visible:hasPromoLogoContent(),html:promoLogoContent()">
+                      
+                  </li>
+                </ul>
+                <div data-bind="html:promoMenuContent()"></div>
+                <div class="visible-xs visible-sm secondary-nav">
+                  <ul class="tools">
+                    <li class="first-child">
+                      <a accesskey="3" href="/more/sitemap.html">Site map</a>
+                    </li>
+                    <li>
+                      <a accesskey="4" href="/more/Contact-Us">Contact us</a>
+                    </li>
+                    <li>
+                      <a href="/more/Help">Help</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="visible-xs visible-sm secondary-nav">
+                  <ul id="MyLocation">
+                    <li>My location:&nbsp;
+                      <span data-bind="text: userLocationName() ? userLocationName() : 'Unknown'">Unknown</span>
+                    </li>
+                    <li>
+                      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#changeLocation">Change location</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- Page content -->
+  <div id="breadcrumb" role="navigation" aria-labelledby="landmark-breadcrumb" class="sr-only">
+    <h2 id="landmark-breadcrumb">You are here:</h2>
+    <ol>
+       
+      <li class="active">Home</li>
+       
+    </ol>
+  </div>
+
+  <!-- Page content -->
+  <div id="content" class="content" role="main" aria-labelledby="landmark-page-heading">
+    <a id="returnToTop" href="#" class="btn btn-primary hidden-md hidden-lg">Return to top <span class="halflings halflings-arrow-up" aria-hidden="true"></span></a>
+
+<div id="koContainer">
+    <div id="mapHeaderContainer">
+        <!-- Page content -->
+        <div id="content" role="main" aria-labelledby="landmark-page-heading">
+            <h1 id="landmark-page-heading" class="sr-only">Map of traffic alerts</h1>
+        </div>
+    </div>
+
+    <div id="mapContainer">
+        
+
+        <div class="container widgetColumn" style="display: none;" data-bind="visible: searchModel !== null">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row activateInteraction">
+                        <div id="searchContainer" class="container-fluid" data-bind="with: searchModel">
+                            <div id="mapWidget" data-bind="css: mapwidgetstyle()" class="">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div id="searchWidget">
+                                            <div id="searchForm">
+                                                <div class="row">
+                                                    <div class="col-xs-1 text-center">
+                                                        <i class="glyphicons glyphicons-map-marker" aria-hidden="true"></i>
+                                                        <!-- <img src="images/map/StartRoute.png" alt="Starting Point" class="pin center-block" data-bind="attr: { title: mode() === 'browse' ? 'Location' : 'Starting Point'}" /> -->
+                                                        <label class="control-label sr-only" for="mapStartingPoint">Origin</label>
+                                                    </div>
+                                                    <div class="col-xs-9">
+                                                        <input id="mapStartingPoint" type="text" class="form-control" data-bind="placesAutocomplete: origin, placeholder: mode() === 'browse' ? 'Search for a location' : 'Add a starting point'" />
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                        <button id="routeModeButton" title="Click to plan a journey" class="btn btn-default btn-xs center-block" data-bind="click: toggleMode, visible: mode() === 'browse'"><img id="routeModeImage" src="images/map/PlanRoute.png" alt="Plan a journey" /></button>
+                                                        <button id="browseModeButton" title="Click to browse the map" class="btn btn-default btn-xs center-block" data-bind="click: toggleMode, visible: mode() === 'route'">
+                                                            <i class="glyphicons glyphicons-map"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="row" data-bind="visible: mode() === 'route'">
+                                                    <div class="col-xs-1 text-center">
+                                                        <i class="glyphicons glyphicons-map-marker" aria-hidden="true"></i>
+                                                        <label class="control-label sr-only" for="mapStartingPoint">Destination</label>
+                                                    </div>
+                                                    <div class="col-xs-9">
+                                                        <input id="mapEndingPoint" type="text" class="form-control" placeholder="Add a destination" data-bind="placesAutocomplete: destination" />
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                        <button id="changeDirectionsButton" title="Reverse start and destination" class="btn btn-default btn-xs center-block" data-bind="click: reverseSearchTermsClicked">
+                                                            <i class="glyphicons glyphicons-sorting"></i>
+                                                            <span class="sr-only">Reverse start and destination</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="clear-search">
+                                                            <a data-bind="click: clearSearchClicked, visible: mode() === 'browse' && origin().term() || mode() === 'route' && (origin().term() || destination().term())">Clear Search</a>
+                                                            <!-- <span data-bind="visible: !(mode() === 'browse' && origin().term() || mode() === 'route' && (origin().term() || destination().term()))">Clear Search</span> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="routeOptionsWidget" data-bind="visible: mode() === 'route'">
+                                                <div id="travelModeOptionsWidget" style="text-align: center;">
+                                                    <a id="drivingModeButton" class="btn btn-link travelModeButton active" title="Driving Mode" data-bind="click: drivingModeClicked, css: { active: travelMode() == 'DRIVING' }, attr: { aria_pressed: travelMode() == 'DRIVING' ? 'true' : 'false' }">
+                                                        <i class="glyphicons glyphicons-car"></i>
+                                                    </a>
+                                                    <a id="transitModeButton" class="btn btn-link travelModeButton" title="Public Transport Mode" data-bind="click: transitModeClicked, css: { active: travelMode() == 'TRANSIT' }, attr: { aria_pressed: travelMode() == 'TRANSIT' ? 'true' : 'false' }">
+                                                        <i class="glyphicons glyphicons-train"></i>
+                                                    </a>
+                                                    <a id="walkingModeButton" class="btn btn-link travelModeButton" title="Walking Mode" data-bind="click: walkingModeClicked, css: { active: travelMode() == 'WALKING' }, attr: { aria_pressed: travelMode() == 'WALKING' ? 'true' : 'false' }">
+                                                        <i class="glyphicons glyphicons-person-walking"></i>
+                                                    </a>
+                                                    <a id="bicycleModeButton" class="btn btn-link travelModeButton" title="Bicycling Mode" data-bind="click: bicycleModeClicked, css: { active: travelMode() == 'BICYCLING' }, attr: { aria_pressed: travelMode() == 'BICYCLING' ? 'true' : 'false' }">
+                                                        <i class="glyphicons glyphicons-bicycle"></i>
+                                                    </a>
+                                                    <select id="routeOptionsDropDown" multiple="multiple" data-bind="
+                                                          multiselect: routeOptions.multiselectOptions,
+                                                          options: routeOptions.options,
+                                                          optionsText: 'name' ,
+                                                          optionsValue: 'name' ,
+                                                          optionsAfterRender: routeOptions.setOptionDisable,
+                                                          selectedOptions: routeOptions.selectedOptions,
+                                                          enable: routeOptions.enable"></select>
+                                                </div>
+                                            </div>
+<!--                                            <div id="futureWidget" data-bind="visible: datemode() === 'future' && showFutureWidget()">-->
+<!--                                                <div id="futureDateTimeWidget" class="row">-->
+<!--                                                    <div class="container-fluid">-->
+<!--                                                        <div class="row">-->
+<!--                                                            <div class="col-xs-10">-->
+<!--                                                                <div class="row">-->
+<!--                                                                    <div class="col-xs-6">-->
+<!--                                                                        <label for="travellingOnText" class="control-label">Travelling on</label>-->
+<!--                                                                    </div>-->
+<!--                                                                    <div class="col-xs-6">-->
+<!--                                                                        <p class="form-control-static"><span id="travellingOnText" data-bind="text: travellingOn()"></span></p>-->
+<!--                                                                    </div>-->
+<!--                                                                </div>-->
+<!--                                                                <div class="row" data-bind="visible: travelMode() !== 'TRANSIT'">-->
+<!--                                                                    <div class="col-xs-6">-->
+<!--                                                                        <label for="travellingAt" class="control-label">Departing at</label>-->
+<!--                                                                    </div>-->
+<!--                                                                    <div class="col-xs-6">-->
+<!--                                                                        <p class="form-control-static"><span id="travellingAt" data-bind="text: travellingAt()"></span></p>-->
+<!--                                                                    </div>-->
+<!--                                                                </div>-->
+<!--                                                                <div class="row" data-bind="visible: travelMode() === 'TRANSIT'">-->
+<!--                                                                    <div class="col-xs-6">-->
+<!--                                                                        <select id="dateTimeOptionsDropDown" data-bind="-->
+<!--                                                                              multiselect: {},-->
+<!--                                                                              options: transitOptions.options,-->
+<!--                                                                              optionsText: 'name' ,-->
+<!--                                                                              optionsValue: 'value' ,-->
+<!--                                                                              value: transitDateTimeType"></select>-->
+<!--                                                                    </div>-->
+<!--                                                                    <div class="col-xs-6">-->
+<!--                                                                        <p class="form-control-static"><span data-bind="text: travellingAt()"></span></p>-->
+<!--                                                                    </div>-->
+<!--                                                                </div>-->
+<!--                                                            </div>-->
+<!--                                                            <div class="col-xs-2">-->
+<!--                                                                <button id="setDateTimeButton" data-bind="click: changeDateTimeClicked" title="Click to change date and time" class="btn btn-default btn-xs">-->
+<!--                                                                    <i class="glyphicons glyphicons-calendar" aria-hidden="true"></i>-->
+<!--                                                                </button>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+
+                                            <div id="alert-bar" data-bind="visible: $root.alert.alert">
+                                                <div class="alert" data-bind="text: $root.alert.alert, css: $root.alert.alertlevel"></div>
+                                            </div>
+
+                                            <div id="recentJourneysForm" class="form" data-bind="visible: mode() === 'route'">
+                                                <div class="dropdown">
+                                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><div id="RecentJourneysBtn">Recent journeys <span class="caret"></span></div> </button>
+                                                    <ul class="dropdown-menu" role="menu" style="overflow: auto; max-height: 400px;">
+                                                        <!-- ko foreach: recentJourneys -->
+                                                        <li>
+                                                            <div class="container-fluid">
+                                                                <a href="#" data-bind="html: $parent.getRecentJourneyDescription($index()) , click: function(data, event) { $parent.recentJourneysClicked($index()) }"></a>
+                                                            </div>
+                                                        </li>
+                                                        <!-- /ko -->
+                                                        <li data-bind="if: recentJourneys().length == 0"><a href="#" class="text-center">Perform a search to save a journey here (10 max.).</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="majorRoutesForm" data-bind="visible: mode() === 'route'">
+                                                <div class="dropdown">
+                                                    <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><div id="MajorRoutesBtn">Major routes <span class="caret"></span></div></button>
+                                                    <ul class="dropdown-menu" role="menu" style="overflow: auto; max-height: 360px;" data-bind="foreach: majorRoutes">
+                                                        <li>
+                                                            <a href="#" data-bind="click: $parent.majorRouteClicked, text: name"></a>
+                                                            <hr />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="route-mode-spinner-bar" data-bind="visible: mode() === 'route'">
+                                                <small class="center-text" data-bind="visible: busy()">
+                                                    <span class="spinner-intro">Querying routes</span>
+                                                    <div class="spinner">
+                                                        <div class="bounce1"></div>
+                                                        <div class="bounce2"></div>
+                                                        <div class="bounce3"></div>
+                                                    </div>
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="browseModeWidgets" data-bind="visible: mode() === 'browse'">
+                                        <div class="col-xs-6">
+                                            <h4>Traffic alerts <span class="badge" data-bind="text: $root.trafficAlertsCount"></span></h4>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="live-status-spinner-bar" data-bind="visible: $root.busy()">
+                                                <small class="pull-right">
+                                                    <span class="spinner-intro">Updating traffic alerts</span>
+                                                    <div class="spinner">
+                                                        <div class="bounce1"></div>
+                                                        <div class="bounce2"></div>
+                                                        <div class="bounce3"></div>
+                                                    </div>
+                                                </small>
+                                            </div>
+                                            <div id="noTrafficImpactsMessage" data-bind="visible: !$root.inViewPortAlertsPresent()  && !$root.busy()">
+                                                <span>No traffic alerts were found.</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="row">
+                                                <div id="live-status-list">
+                                                    <div id="red-alert-status-list" class="container-fluid" data-bind="foreach: $root.inViewPortRedAlerts">
+                                                        <div class="trafficImpactRow row" data-bind="click: $root.showSelectedEvent, css: { 'high-priority': properties.event_priority == 'High' }" title="Click to view the impact details">
+                                                            <div class="trafficImpactIcons col-xs-2">
+                                                                <a href="#" title="Click to view the impact details" data-bind="visible: properties.displayIconUrl">
+                                                                    <!-- ko ifnot: properties.isRedAlert -->
+                                                                    <img data-bind="attr: { src: properties.impactIconUrl }" alt="Click to view the impact details">
+                                                                    <!-- /ko -->
+                                                                    <img data-bind="attr: { src: properties.displayIconUrl }" alt="Click to view the impact details">
+                                                                </a>
+                                                            </div>
+                                                            <div class="trafficImpactInfo col-xs-10">
+                                                                <!-- ko ifnot: properties.isRedAlert -->
+                                                                <span title="Click to view the impact on our map" data-bind="text: properties.eventDisplaySummary"></span>
+                                                                <!-- /ko -->
+                                                                <!-- ko if: properties.isRedAlert -->
+                                                                <span title="Click to view the impact on our map" data-bind="html: properties.eventDisplaySummary"></span>
+                                                                <!-- /ko -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="area-alert-status-list" class="container-fluid" data-bind="foreach: $root.inViewPortAreaAlerts">
+                                                        <div class="trafficImpactRow row" data-bind="click: $root.showSelectedEvent, css: { 'high-priority': properties.event_priority == 'High' }" title="Click to view the impact details">
+                                                            <div class="trafficImpactIcons col-xs-2">
+                                                                <a href="#" title="Click to view the impact details" data-bind="visible: properties.displayIconUrl">
+                                                                    <img data-bind="attr: { src: properties.displayIconUrl }" alt="Click to view the impact details">
+                                                                </a>
+                                                            </div>
+                                                            <div class="trafficImpactInfo col-xs-10">
+                                                                <span title="Click to view the impact on our map" data-bind="html: properties.eventDisplaySummary"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="high-priority-legend" data-bind="visible: $root.inViewPortHasHighPriorityAlerts">High Priority Alerts</div>
+
+                                                    <div id="status-list" data-bind="visible: $root.inViewPort().length != 0, foreach: $root.inViewPort">
+                                                        <div class="trafficImpactRow row" data-bind="click: $root.showSelectedEvent, css: { 'high-priority': properties.event_priority == 'High' }" title="Click to view the impact details">
+                                                            <!-- ko if: properties.impactIconUrl -->
+                                                            <!-- ko template: { name: 'TrafficImpactTemplate' } -->
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko ifnot: properties.impactIconUrl -->
+                                                            <!-- ko template: { name: 'NoTrafficImpactTemplate' } --><!-- /ko -->
+                                                            <!-- /ko -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div id="routeModeWidgets" data-bind="visible: mode() === 'route'" class="row">
+                                            <div id="searchTermsWidget" data-bind="click: searchTermsBackClicked">
+                                                <div class="row">
+                                                    <div class="col-xs-1"><span style="padding-top: 5px;" class="glyphicons glyphicons-arrow-left"></span></div>
+                                                    <div class="col-xs-11">
+                                                        <div>
+                                                            <a data-bind="text: origin().term()"></a>
+                                                        </div>
+                                                        <div>
+                                                            <a data-bind="text: destination().term()"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="routeSelectorContainer" class="col-xs-12" data-bind="visible: !showTurnByTurn()">
+                                                <!-- -->
+                                                <div id="routeSelector" data-bind="foreach: routes">
+                                                    <div class="row routeDescriptionContainer" data-bind="css: { selectedRouteDescription: $parent.routeIndex() === $index() }, click: function(data) { $parent.routeDescriptionClicked(data, $index()) }">
+                                                        <div class="col-xs-2">
+                                                            <i class="glyphicons" data-bind="css: $parent.routeModeIconClass()"></i>
+                                                        </div>
+                                                        <div class="col-xs-10">
+                                                            <div class="row">
+                                                                <div class="col-xs-9" data-bind="css: { 'col-xs-9': $data.duration_in_traffic.length > 0, 'col-xs-12': $data.duration_in_traffic.length == 0 }"><span class="routeSummary" data-bind="text: $data.summary"></span></div>
+                                                                <div class="col-xs-3 text-right">
+                                                                    <strong><span data-bind="text: $data.duration_in_traffic"></span></strong>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <strong>
+                                                                    <div class="col-xs-9"><span data-bind="text: $data.durationText + ' without traffic'"></span></div>
+                                                                    <div class="col-xs-3 text-right"><span data-bind="text: $data.distanceText"></span></div>
+                                                                </strong>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-xs-12">
+                                                                    <div class="routeEventsContainer" data-bind="if: $parent.travelMode() != 'TRANSIT' && $data.eventsOnRoute() && $data.eventsOnRoute().length > 0">
+                                                                        <div class="routeEventsWidget">
+                                                                            <i class="glyphicons glyphicons-warning-sign"></i> This route has <span data-bind="text: $data.eventsOnRoute().length"></span> traffic impact<span data-bind="if: $data.eventsOnRoute().length > 1">s</span>.
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="detailsLink">
+                                                                        <span data-bind="visible: $parent.routeIndex() !== $index()">View details</span>
+                                                                        <a href="#" data-bind="visible: $parent.routeIndex() === $index(), click: $parent.routeDetailsClicked">View details</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="trafficalertOnRouteContainer" data-bind="visible: showEventsOnRoute() && travelMode() !== 'TRANSIT'">
+                                                <h4 class="col-xs-12">Traffic alerts on your route <span class="badge" data-bind="text: $root.searchModel.selectedEventsOnRoute().length"></span></h4>
+                                                <div class="trafficalertOnRoute">
+                                                    <div id="status-list" data-bind="foreach: $root.searchModel.selectedEventsOnRoute">
+                                                        <div class="trafficImpactRow" data-bind="click: $root.showSelectedEvent, css: { 'high-priority': properties.event_priority == 'High' }" title="Click to view the impact details">
+                                                            <!-- ko if: properties.impactIconUrl -->
+                                                            <!-- ko template: { name: 'TrafficImpactTemplate' } --><!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko ifnot: properties.impactIconUrl -->
+                                                            <!-- ko template: { name: 'NoTrafficImpactTemplate' } --><!-- /ko -->
+                                                            <!-- /ko -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="directionsContainer" class="col-xs-12" data-bind="visible: showTurnByTurn()">
+                                                <h4>Turn by Turn Directions</h4>
+                                                <div id="turnByTurn"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div id="noRouteEventWidget" data-bind="visible: showEventsOnRoute() && travelMode() === 'TRANSIT'">
+                                            <div class="alert alert-info">For real time public transport information and service updates, please visit translink.com.au or call 13 12 30</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row hidden-xs visible-md visible-lg">
+                <div class="col-xs-12" style="padding-right:0px">
+                    <div class="showhidebutton activateInteraction">
+                        <a id="showhidelistbrowse" class="btn btn-link" data-bind="css: {'disabled' : searchModel.disableShowHideLink() }, click: togglePanelClicked">
+                            <span data-bind="text: searchModel.panelOpen() ? 'Hide' : 'Show'">Show</span> list <span class="halflings" data-bind="css: { 'halflings-triangle-top': searchModel.panelOpen(), 'halflings-triangle-bottom': !searchModel.panelOpen() }"></span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid mapContainerInner">
+            <div class="mapContainerRow row">
+                <div class="mapColumn">
+                    <div id="map" data-menu-item-id="mapview"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="rainLogoOverlay">
+    </div>
+    <div id="map-options" class="col-xs-2" style="display: none;">
+        <div class="options-tab-wrapper pull-right">
+            <ul id="optionsTab" class="nav nav-tabs"
+                data-bind="click: eventFilterModel.toggle">
+                <li class="active" style="cursor: pointer">
+                    <a id="mapOptionsButton" class="btn btn-link btn-primary" aria-label="Map options">
+                        <i class="glyphicons glyphicons-cogwheel" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="mapFilterContainer" data-bind="with: eventFilterModel">
+            <div id="mapFilterControl" data-bind="fadeVisible: visible">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4><a data-toggle="collapse" data-parent="#mapFilterControl" href="#trafficAlertsList">Traffic alerts</a></h4>
+                    </div>
+                    <div id="trafficAlertsList" class="panel-collapse collapse in">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5 class="list-group-item-heading">Current alerts</h5>
+                            </li>
+                            <li class="list-group-item" data-bind="visible: datemode() === 'current'">
+                                <span class="badge" data-bind="text: $root.hazardCount"></span>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" data-bind="checked: showHazards, click: $parent.handleClick.bind($data, 'Hazard')">
+                                        <img src="images/roadevents/Hazard.png" />
+                                        Hazards
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item" data-bind="visible: datemode() === 'current'">
+                                <span class="badge" data-bind="text: $root.crashCount"></span>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" data-bind="checked: showCrashes, click: $parent.handleClick.bind($data, 'Crashes')" />
+                                        <img src="images/roadevents/Crash.png" />
+                                        Crashes
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item" data-bind="visible: datemode() === 'current'">
+                                <span class="badge" data-bind="text: $root.congestionCount"></span>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" data-bind="checked: showCongestion, click: $parent.handleClick.bind($data, 'Congestion')" />
+                                        <img src="images/roadevents/Congestion.png" />
+                                        Congestion
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item" data-bind="visible: datemode() === 'current'">
+                                <span class="badge" data-bind="text: $root.floodingCount"></span>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" data-bind="checked: showFlooding, click: $parent.handleClick.bind($data, 'Flooding')" />
+                                        <img src="images/roadevents/Flooding.png" />
+                                        Flooding
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item" data-bind="visible: datemode() === 'current'">
+                                <span class="badge" data-bind="text: $root.eventCount"></span>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" data-bind="checked: showSpecialEvents, click: $parent.handleClick.bind($data, 'SpecialEvents')" />
+                                        <img src="images/roadevents/SpecialEvents.png" />
+                                        Special events
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item" data-bind="visible: datemode() === 'current'">
+                                <span class="badge" data-bind="text: $root.roadworkCount"></span>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" data-bind="checked: showRoadworks, click: $parent.handleClick.bind($data, 'Roadworks')" />
+                                        <img src="images/roadevents/Roadworks.png" />
+                                        Roadworks
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-group">
+                            <li class="list-group-item" data-bind="visible: datemode() === 'current'">
+                                <h5 class="list-group-item-heading">Future alerts</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge" data-bind="text: $root.futureEventCount"></span>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" data-bind="checked: showFutureSpecialEvents, click: $parent.handleClick.bind($data, 'FutureSpecialEvents')" />
+                                        <img src="images/roadevents/SpecialEventsFuture.png" />
+                                        <span>Special events</span><br /><span class="futureDate" data-bind="visible: datemode() === 'future'">(<span data-bind="text: window.moment(futureDateTime()).format('ddd D MMM YYYY')"></span>)</span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge" data-bind="text: $root.futureRoadworkCount"></span>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" data-bind="checked: showFutureRoadworks, click: $parent.handleClick.bind($data, 'FutureRoadworks')" />
+                                        <img src="images/roadevents/RoadworksFuture.png" />
+                                        <span>Roadworks</span><br /><span class="futureDate" data-bind="visible: datemode() === 'future'">(<span data-bind="text: window.moment(futureDateTime()).format('ddd D MMM YYYY')"></span>)</span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><a data-toggle="collapse" class="collapsed" data-parent="#mapFilterControl" href="#mapOptionsList">Map options</a></h4>
+                    </div>
+                    <ul id="mapOptionsList" class="list-group panel-collapse collapse">
+                        <li class="list-group-item" data-bind="visible: datemode() === 'current'">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" data-bind="checked: showTrafficFlow, click: $parent.handleClick.bind($data, 'TrafficFlow')" />
+                                    <img src="images/map/TrafficLayerIcon.png" />
+                                    Traffic flow
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item" data-bind="visible: datemode() === 'current'">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" data-bind="checked: showTrafficCameras, click: $parent.handleClick.bind($data, 'TrafficCamera')" />
+                                    <img src="images/roadevents/TrafficCamera.png" />
+                                    Traffic cameras
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item" data-bind="visible: datemode() === 'current' && window.isFloodCameraMenuVisible">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" data-bind="checked: showFloodCameras, click: $parent.handleClick.bind($data, 'FloodCamera')" />
+                                    <img src="images/roadevents/FloodCamera.png" />
+                                    Flood cameras
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item" data-bind="visible: window.isHighRiskCrashZonesVisible">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" data-bind="checked: showBlackSpots, click: $parent.handleClick.bind($data, 'Blackspots')" />
+                                    <img src="images/roadevents/BlackSpot.png" />
+                                    High risk crash zones
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" data-bind="checked: showDumpPoints, click: $parent.handleClick.bind($data, 'DumpPoints')" />
+                                    <img src="images/roadevents/DumpPoint.png" />
+                                    Dump points
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" data-bind="checked: showRestStops, click: $parent.handleClick.bind($data, 'RestStops')" />
+                                    <img src="images/roadevents/RestArea.png" />
+                                    Rest areas
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" data-bind="checked: showHeavyVehicleRestStops, click: $parent.handleClick.bind($data, 'HeavyVehicleRestStops')" />
+                                    <img src="images/roadevents/RestArea.png" />
+                                    Heavy vehicle rest areas
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" data-bind="checked: showTruckRestrictions, click: $parent.handleClick.bind($data, 'TruckRestrictions')" />
+                                    <img src="images/roadevents/TruckRestriction.png" />
+                                    Truck restrictions
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" data-bind="checked: showAreaAlerts, click: $parent.handleClick.bind($data, 'AreaAlerts')" />
+                                    <img src="images/roadevents/AreaAlert.png" />
+                                    Area alerts
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" data-bind="checked: showRainRadar, click: $parent.handleClick.bind($data, 'RainRadar')" />
+                                    <img src="images/roadevents/RainRadar.png" />
+                                    BOM Rain Radar
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="autoRefresh-Container" style="display: none;">
+        <div>
+            <div>
+                <label class="switch">
+                    <input type="checkbox" data-bind="checked: $root.autorefresh">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div>Auto refresh</div>
+        </div>
+    </div>
+</div>
+
+<!--<pre data-bind="text: ko.toJSON($data.isMobileSize(), null, 1)"></pre>-->
+<!-- Modals -->
+<div id="futureDateTimePickerModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" aria-role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Select the Date and Time of Travel</h4>
+            </div>
+
+            <div class="modal-body">
+                <div id="futureTravelWarning">
+                    <div class="alert alert-info">
+                        You are on the future travel planning section of the QLD Traffic website. Only currently known information for planned roadworks and special events are available. Please check this website again before embarking on your trip to get the most up to date information.
+                    </div>
+                </div>
+
+                <div style="overflow: hidden;">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div id="futureDateTimePicker" data-bind="dateTimePicker: dateTime, dateTimePickerOptions: { inline: true, sideBySide: true, minDate: moment().add(1, 'd').startOf('day') }"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="infoWindowModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" data-bind="style: { borderColor: selectedEvent().properties.borderColor }">
+        <div class="modal-content">
+            <div id="infoWindowModalContent" class="modal-body">
+                <div data-bind="template: { name: displayTemplateName, data: selectedEvent().properties, if: selectedEvent().properties }"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="infoWindowCameraModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="infoWindowCameraModalContent" class="modal-body">
+                <div data-bind="template: { name: 'trafficCamInfoTemplate', data: selectedCamera(), if: selectedCamera().feature() }"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="infoWindowFloodCameraModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="infoWindowFloodCameraModalContent" class="modal-body">
+                <div data-bind="template: { name: 'trafficCamInfoTemplate', data: selectedFloodCamera(), if: selectedFloodCamera().feature() }"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="infoWindowDumpPointModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="infoWindowDumpPointModalContent" class="modal-body">
+                <div data-bind="template: { name: 'DumpPointInfoTemplate', data: selectedDumpPoint(), if: selectedDumpPoint().feature() }"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="infoWindowBlackSpotModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="infoWindowBlackSpotModalContent" class="modal-body">
+                <div data-bind="template: { name: 'BlackSpotInfoTemplate', data: selectedBlackSpot(), if: selectedBlackSpot().feature() }"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="infoWindowRestStopModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="infoWindowRestStopModalContent" class="modal-body">
+                <div data-bind="template: { name: 'RestStopInfoTemplate', data: selectedRestStop(), if: selectedRestStop().feature() }"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="infoTruckRestrictionModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="infoTruckRestrictionModalContent" class="modal-body">
+                <div data-bind="template: { name: 'TruckRestrictionInfoTemplate', data: selectedTruckRestriction(), if: selectedTruckRestriction().feature() }"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Info Window Content -->
+<div id="infoWindowContentContainer" style="display: none;">
+    <div id="infoWindowContent">
+        <div data-bind="template: { name: displayTemplateName, data: selectedEvent().properties, if: selectedEvent().properties }"></div>
+    </div>
+</div>
+
+<div id="infoWindowCameraContentContainer" style="display: none;">
+    <div id="infoWindowCameraContent">
+        <div data-bind="template: { name: 'trafficCamInfoTemplate', data: selectedCamera(), if: selectedCamera().feature() }"></div>
+    </div>
+</div>
+
+<div id="infoWindowFloodCameraContentContainer" style="display: none;">
+    <div id="infoWindowFloodCameraContent">
+        <div data-bind="template: { name: 'trafficCamInfoTemplate', data: selectedFloodCamera(), if: selectedFloodCamera().feature() }"></div>
+    </div>
+</div>
+
+<div id="infoWindowDumpPointContainer" style="display: none;">
+    <div id="infoWindowDumpPointContent">
+        <div data-bind="template: { name: 'DumpPointInfoTemplate', data: selectedDumpPoint(), if: selectedDumpPoint().feature() }"></div>
+    </div>
+</div>
+
+<div id="infoWindowBlackSpotContainer" style="display: none;">
+    <div id="infoWindowBlackSpotContent">
+        <div data-bind="template: { name: 'BlackSpotInfoTemplate', data: selectedBlackSpot(), if: selectedBlackSpot().feature() }"></div>
+    </div>
+</div>
+
+<div id="infoWindowRestStopContainer" style="display: none;">
+    <div id="infoWindowRestStopContent">
+        <div data-bind="template: { name: 'RestStopInfoTemplate', data: selectedRestStop(), if: selectedRestStop().feature() }"></div>
+    </div>
+</div>
+
+<div id="infoWindowTruckRestrictionContainer" style="display: none;">
+    <div id="infoWindowTruckRestrictionContent">
+        <div data-bind="template: { name: 'TruckRestrictionInfoTemplate', data: selectedTruckRestriction(), if: selectedTruckRestriction().feature() }"></div>
+    </div>
+</div>
+
+<script type="text/html" id="infoWindowTemplate1">
+
+    <div class="infoWindowAlertHeader" data-bind="if: event_priority === 'Red Alert'">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="infoWindowAlertLable"><span>Red Alert</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="infoWindowHeader" data-bind="css: { hazard: event_type === 'Hazard', crash: event_type === 'Crash', congestion: event_type === 'Congestion', flooding: event_type === 'Flooding'}">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <span data-bind="if: event_type === 'Hazard'">
+                        <span class="dark-infowindow-header" data-bind="text: event_type + ': ' + event_subtype"></span>
+                    </span>
+                    <span data-bind="if: event_type === 'Crash'">
+                        <span data-bind="text: event_subtype + ' ' + event_type"></span>
+                    </span>
+                    <span data-bind="if: event_type === 'Congestion'">
+                        <span data-bind="text: event_subtype + ' ' + event_type"></span>
+                    </span>
+                    <span data-bind="if: event_type === 'Flooding'">
+                        <span data-bind="text: event_subtype"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="infoWindowSubHeader" data-bind="css: { hazard: event_type === 'Hazard', crash: event_type === 'Crash', congestion: event_type === 'Congestion', flooding: event_type === 'Flooding'}">
+
+        <div class="container-fluid" data-bind="if: event_due_to">
+            <div class="row" data-bind="if: event_type === 'Hazard'">
+                <div class="col-xs-4 infoWindowSubHeaderLabel"><span class="dark-infowindow-header">Due to</span></div>
+                <div class="col-xs-8 infoWindowSubHeaderLabel">
+                    <div><span class="dark-infowindow-header" data-bind="text: event_due_to"></span></div>
+                </div>
+            </div>
+            <div class="row" data-bind="if: event_type != 'Hazard'">
+                <div class="col-xs-4 infoWindowSubHeaderLabel">Due to</div>
+                <div class="col-xs-8 infoWindowSubHeaderLabel">
+                    <div><span data-bind="text: event_due_to"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid event-removed" data-bind="if: isRecentlyDeleted">
+            <div>
+                This event has been removed. <button data-bind="click: $root.removeEvent">Refresh</button>
+            </div>
+        </div>
+        <div class="container-fluid event-updated" data-bind="if: isRecentlyUpdated">
+            <div>
+                This event has been updated. <button data-bind="click: $root.refreshEvent">Refresh</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="infoWindowBody container-fluid">
+        <div class="infoWindowSection">
+            <div class="row">
+                <div class="col-xs-4 infoWindowLabel">Suburbs / Localities</div>
+                <div class="col-xs-8">
+                    <div><span data-bind="text: road_summary.locality"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row">
+                <div class="col-xs-4 infoWindowLabel">Roads</div>
+                <div class="col-xs-8">
+                    <div data-bind="foreach: road_summary.road_name.replace(/\\s/g,'').split('/')">
+                        <div><span data-bind="text: $data"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: description">
+                <div class="col-xs-4 infoWindowLabel">Location details</div>
+                <div class="col-xs-8">
+                    <span data-bind="text: description"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: impact">
+                <div class="col-xs-4 infoWindowLabel">What to expect</div>
+                <div class="col-xs-8">
+                    <div class="infoWindowImpactHeader">
+                        <div data-bind="css: { 'impact-type-1': impactDisplayType === 1, 'impact-type-2': impactDisplayType === 2, 'impact-type-3': impactDisplayType === 3, 'impact-type-4': impactDisplayType === 4 }">
+                            <div class="row" data-bind="if: impactIconUrl">
+                                <div class="col-xs-12">
+                                    <span data-bind="if: impact.impact_subtype">
+                                        <span data-bind="text: impact.impact_subtype"></span>
+                                    </span>
+                                    <span data-bind="if: !impact.impact_subtype">
+                                        <span data-bind="text: impact.impact_type"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <span data-bind="ifnot: impactIconUrl">
+                                <span data-bind="if: impact.impact_subtype">
+                                    <span data-bind="text: impact.impact_subtype"></span>
+                                </span>
+                                <span data-bind="if: !impact.impact_subtype">
+                                    <span data-bind="text: impact.impact_type"></span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div data-bind="if: impact.direction != 'Unknown'">
+                        <span data-bind="text: impact.direction"></span>&nbsp;<span data-bind="if: impact.towards">towards <span data-bind="text: impact.towards"></span></span>
+                    </div>
+                    <div data-bind="if: impact.delay">
+                        <span data-bind="text: impact.delay"></span>
+                    </div>
+                    <div data-bind="if: advice">
+                        <span data-bind="text: advice"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: information || web_link">
+                <div class="col-xs-4 infoWindowLabel">Extra information</div>
+                <div class="col-xs-8">
+                    <div class="infoWindowExtraInfo" data-bind="if: information, css: { showExtraInfo: true }, debug: this">
+                        <span data-bind="text: information"></span>
+                    </div>
+                    <div data-bind="if: web_link">
+                        <a data-bind="attr: { href: web_link }">Additional information</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: alert_message">
+                <div class="col-xs-4 infoWindowLabel">Area alert message</div>
+                <div class="col-xs-8">
+                    <div class="infoWindowExtraInfo" data-bind="if: alert_message, css: { showExtraInfo: true }, debug: this">
+                        <span data-bind="text: alert_message"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: last_updated">
+                <div class="col-xs-4 infoWindowLabel">Last updated</div>
+                <div class="col-xs-8">
+                    <span data-bind="text: window.moment(last_updated).format('D MMM YYYY hh:mm a')"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: next_inspection && window.moment(next_inspection).isSameOrAfter(moment())">
+                <div class="col-xs-4 infoWindowLabel">Next road inspection</div>
+                <div class="col-xs-8">
+                    <span data-bind="text: window.moment(next_inspection).format('D MMM YYYY')"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: source.provided_by">
+                <div class="col-xs-4 infoWindowLabel">Information provided by</div>
+                <div class="col-xs-8">
+                    <span data-bind="if: source.provided_by_url">
+                        <a data-bind="attr: { href: source.provided_by_url }"><span data-bind="text: source.provided_by"></span></a>
+                    </span>
+                    <span data-bind="ifnot: source.provided_by_url">
+                        <span data-bind="text: source.provided_by"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="infoWindowSection" data-bind="visible: window.isEventImageVisible">
+            <div class="row" data-bind="if: image">
+                <div class="col-xs-4 infoWindowLabel">Image</div>
+                <div class="col-xs-8">
+                    <img class="event-image" data-bind="attr: {src: image}" />
+                </div>
+            </div>
+        </div>
+        <div class="infoWindowSection">
+            <div class="row">
+                <div class="col-xs-4 infoWindowLabel">Event ID</div>
+                <div class="col-xs-8">
+                    <div><span data-bind="text: id"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row">
+                <div class="col-xs-4 infoWindowLabel">&nbsp;</div>
+                <div class="col-xs-8">
+                    <p class="copy-link-container">
+                        <span class="do-not-show" style="color: red;">The link has not been copied as your browser doesn't support it. Please copy the link from below.</span>
+                        <textarea class="collapsed-view" data-bind="value: displayUrl" readonly="readonly"></textarea>
+                        <a data-bind="click: $parent.copyLink" tooltip="Copy">Copy Link</a>
+                        <span class="copied-message">Copied</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div data-bind="if: openedAsModal" class="iwModalCloseBar text-right">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+    </div>
+
+    <div class="infoWindowAlertFooter" data-bind="if: event_priority === 'Red Alert'">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="infoWindowAlertLable"><span>&nbsp;</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html" id="infoWindowTemplate2">
+
+    <div class="infoWindowAlertHeader" data-bind="if: event_priority === 'Red Alert'">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="infoWindowAlertLable"><span>Red Alert</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="infoWindowHeader" data-bind="css: { roadworks: event_type === 'Roadworks', specialevent: event_type === 'Special event' }">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <span data-bind="text: event_type, css: {'dark-infowindow-header': event_type === 'Roadworks'}"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="infoWindowSubHeader" data-bind="css: { roadworks: event_type === 'Roadworks', specialevent: event_type === 'Special event' }">
+        <div class="container-fluid" data-bind="if: event_due_to">
+            <div data-bind="if: event_type === 'Roadworks'" class="row">
+                <div class="col-xs-4"><span class="dark-infowindow-header">Due to</span></div>
+                <div class="col-xs-8">
+                    <span class="dark-infowindow-header" data-bind="text: event_due_to"></span>
+                </div>
+            </div>
+            <div data-bind="if: event_type != 'Roadworks'" class="row">
+                <div class="col-xs-4">Due to</div>
+                <div class="col-xs-8">
+                    <span data-bind="text: event_due_to"></span>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid event-removed" data-bind="if: isRecentlyDeleted">
+            <div>
+                This event has been removed. <button data-bind="click: $root.removeEvent">Refresh</button>
+            </div>
+        </div>
+        <div class="container-fluid event-updated" data-bind="if: isRecentlyUpdated">
+            <div>
+                This event has been updated. <button data-bind="click: $root.refreshEvent">Refresh</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="infoWindowBody container-fluid">
+      <div class="infoWindowSection">
+            <div class="row">
+                <div class="col-xs-4 infoWindowLabel">Suburbs / Localities</div>
+                <div class="col-xs-8">
+                    <div><span data-bind="text: road_summary.locality"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row">
+                <div class="col-xs-4 infoWindowLabel">Roads</div>
+                <div class="col-xs-8">
+                    <div data-bind="foreach: road_summary.road_name.replace(/\\s/g,'').split('/')">
+                        <div><span data-bind="text: $data"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: description">
+                <div class="col-xs-4 infoWindowLabel">Location details</div>
+                <div class="col-xs-8">
+                    <span data-bind="text: description"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: duration">
+                <div class="col-xs-4 infoWindowLabel">Duration</div>
+                <div class="col-xs-8">
+                    <span data-bind="text: window.moment(duration.start).format('D MMM YYYY')"></span> to
+                    <span data-bind="text: window.moment(duration.end).format('D MMM YYYY')"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: duration.recurrences">
+                <div class="col-xs-4 infoWindowLabel">Scheduled times</div>
+                <div class="col-xs-8">
+                    <div data-bind="foreach: duration.recurrences">
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img data-bind="attr: {src: window.qtBaseUrl + 'images/infowindows/RoadImpacts_Clock.png' }" alt="" />
+                            </div>
+                            <div class="col-xs-10">
+                                <span data-bind="text: description"></span>
+                                <span data-bind="if: impact.impact_subtype">
+                                    <span data-bind="text: impact.impact_subtype"></span>
+                                </span>
+                                <span data-bind="if: !impact.impact_subtype">
+                                    <span data-bind="text: impact.impact_type"></span>
+                                </span>
+                                <span data-bind="ifnot: impact.direction == 'Unknown'">
+                                    <span data-bind="text: impact.direction"></span>
+                                </span><span data-bind="if: impact.towards">
+                                    towards <span data-bind="text: impact.towards"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: impact">
+                <div class="col-xs-4 infoWindowLabel">What to expect</div>
+                <div class="col-xs-8">
+                    <div data-bind="if: impact.delay">
+                        <span data-bind="text: impact.delay"></span>
+                    </div>
+                    <div data-bind="if: advice">
+                        <span data-bind="text: advice"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: information || web_link">
+                <div class="col-xs-4 infoWindowLabel">Extra information</div>
+                <div class="col-xs-8">
+                    <div class="infoWindowExtraInfo" data-bind="if: information, css: { showExtraInfo: true }, debug: this">
+                        <span data-bind="text: information"></span>
+                    </div>
+                    <div data-bind="if: web_link">
+                        <a data-bind="attr: { href: web_link }">Additional information</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: alert_message">
+                <div class="col-xs-4 infoWindowLabel">Area alert message</div>
+                <div class="col-xs-8">
+                    <div class="infoWindowExtraInfo" data-bind="if: alert_message, css: { showExtraInfo: true }, debug: this">
+                        <span data-bind="text: alert_message"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: last_updated">
+                <div class="col-xs-4 infoWindowLabel">Last updated</div>
+                <div class="col-xs-8">
+                    <span data-bind="text: window.moment(last_updated).format('D MMM YYYY hh:mm a')"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: next_inspection && window.moment(next_inspection).isSameOrAfter(moment())">
+                <div class="col-xs-4 infoWindowLabel">Next road inspection</div>
+                <div class="col-xs-8">
+                    <span data-bind="text: window.moment(next_inspection).format('D MMM YYYY')"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: source.provided_by">
+                <div class="col-xs-4 infoWindowLabel">Information provided by</div>
+                <div class="col-xs-8">
+                    <span data-bind="if: source.provided_by_url">
+                        <a data-bind="attr: { href: source.provided_by_url }"><span data-bind="text: source.provided_by"></span></a>
+                    </span>
+                    <span data-bind="ifnot: source.provided_by_url">
+                        <span data-bind="text: source.provided_by"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="infoWindowSection" data-bind="visible: window.isEventImageVisible">
+            <div class="row" data-bind="if: image">
+                <div class="col-xs-4 infoWindowLabel">Image</div>
+                <div class="col-xs-8">
+                    <img class="event-image" data-bind="attr: {src: image}" />
+                </div>
+            </div>
+        </div>
+        <div class="infoWindowSection">
+            <div class="row">
+                <div class="col-xs-4 infoWindowLabel">Event ID</div>
+                <div class="col-xs-8">
+                    <div><span data-bind="text: id"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row">
+                <div class="col-xs-4 infoWindowLabel">&nbsp;</div>
+                <div class="col-xs-8">
+                    <p class="copy-link-container">
+                        <span class="do-not-show" style="color: red;">The link has not been copied as your browser doesn't support it. Please copy the link from below.</span>
+                        <textarea class="collapsed-view" data-bind="value: displayUrl" readonly="readonly"></textarea>
+                        <a data-bind="click: $parent.copyLink" tooltip="Copy">Copy Link</a>
+                        <span class="copied-message">Copied</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-bind="if: openedAsModal" class="iwModalCloseBar text-right">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+    </div>
+
+    <div class="infoWindowAlertFooter" data-bind="if: event_priority === 'Red Alert'">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="infoWindowAlertLable"><span>&nbsp;</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="infoWindowTemplate3">
+    <div class="infoWindowAlertHeader" data-bind="if: event_priority === 'Red Alert'">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="infoWindowAlertLable"><span>Red Alert</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="infoWindowHeader" data-bind="css: { roadworks: event_type === 'Roadworks', specialevent: event_type === 'Special event' }">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <span data-bind="text: event_type, css: {'dark-infowindow-header': event_type === 'Roadworks'}"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="infoWindowSubHeader" data-bind="css: { roadworks: event_type === 'Roadworks', specialevent: event_type === 'Special event' }">
+        <div class="container-fluid" data-bind="if: event_due_to">
+            <div data-bind="if: event_type === 'Roadworks'" class="row">
+                <div class="col-xs-4"><span class="dark-infowindow-header">Due to</span></div>
+                <div class="col-xs-8">
+                    <span class="dark-infowindow-header" data-bind="text: event_due_to"></span>
+                </div>
+            </div>
+            <div data-bind="if: event_type != 'Roadworks'" class="row">
+                <div class="col-xs-4">Due to</div>
+                <div class="col-xs-8">
+                    <span data-bind="text: event_due_to"></span>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid event-removed" data-bind="if: isRecentlyDeleted">
+            <div>
+                This event has been removed. <button data-bind="click: $root.removeEvent">Refresh</button>
+            </div>
+        </div>
+        <div class="container-fluid event-updated" data-bind="if: isRecentlyUpdated">
+            <div>
+                This event has been updated. <button data-bind="click: $root.refreshEvent">Refresh</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="infoWindowBody container-fluid">
+        <div class="infoWindowSection">
+            <div class="row">
+                <div class="col-xs-4 infoWindowLabel">Suburbs / Localities</div>
+                <div class="col-xs-8">
+                    <div><span data-bind="text: road_summary.locality"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row">
+                <div class="col-xs-4 infoWindowLabel">Roads</div>
+                <div class="col-xs-8">
+                    <div data-bind="foreach: road_summary.road_name.replace(/\\s/g,'').split('/')">
+                        <div><span data-bind="text: $data"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: description">
+                <div class="col-xs-4 infoWindowLabel">Location details</div>
+                <div class="col-xs-8">
+                    <span data-bind="text: description"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: duration">
+                <div class="col-xs-4 infoWindowLabel">Duration</div>
+                <div class="col-xs-8">
+                    <span data-bind="text: window.moment(duration.start).format('D MMM YYYY')"></span> to
+                    <span data-bind="text: window.moment(duration.end).format('D MMM YYYY')"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: impact">
+                <div class="col-xs-4 infoWindowLabel">What to expect</div>
+                <div class="col-xs-8">
+                    <div class="infoWindowImpactHeader">
+                        <div data-bind="css: { 'impact-type-1': impactDisplayType === 1, 'impact-type-2': impactDisplayType === 2, 'impact-type-3': impactDisplayType === 3, 'impact-type-4': impactDisplayType === 4 }">
+                            <div class="row" data-bind="if: impactIconUrl">
+                                <div class="col-xs-12">
+                                    <span data-bind="if: impact.impact_subtype">
+                                        <span data-bind="text: impact.impact_subtype"></span>
+                                    </span>
+                                    <span data-bind="if: !impact.impact_subtype">
+                                        <span data-bind="text: impact.impact_type"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <span data-bind="ifnot: impactIconUrl">
+                                <span data-bind="if: impact.impact_subtype">
+                                    <span data-bind="text: impact.impact_subtype"></span>
+                                </span>
+                                <span data-bind="if: !impact.impact_subtype">
+                                    <span data-bind="text: impact.impact_type"></span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div data-bind="ifnot: impact.direction == 'Unknown'">
+                        <span data-bind="text: impact.direction"></span>&nbsp;<span data-bind="if: impact.towards">towards <span data-bind="text: impact.towards"></span></span>
+                    </div>
+                    <div data-bind="if: impact.delay">
+                        <span data-bind="text: impact.delay"></span>
+                    </div>
+                    <div data-bind="if: advice">
+                        <span data-bind="text: advice"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: information || web_link">
+                <div class="col-xs-4 infoWindowLabel">Extra information</div>
+                <div class="col-xs-8">
+                    <div class="infoWindowExtraInfo" data-bind="if: information, css: { showExtraInfo: true }, debug: this">
+                        <span data-bind="text: information"></span>
+                    </div>
+                    <div data-bind="if: web_link">
+                        <a data-bind="attr: { href: web_link }">Additional information</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: alert_message">
+                <div class="col-xs-4 infoWindowLabel">Area alert message</div>
+                <div class="col-xs-8">
+                    <div class="infoWindowExtraInfo" data-bind="if: alert_message, css: { showExtraInfo: true }, debug: this">
+                        <span data-bind="text: alert_message"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: last_updated">
+                <div class="col-xs-4 infoWindowLabel">Last updated</div>
+                <div class="col-xs-8">
+                    <span data-bind="text: window.moment(last_updated).format('D MMM YYYY hh:mm a')"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: next_inspection && window.moment(next_inspection).isSameOrAfter(moment())">
+                <div class="col-xs-4 infoWindowLabel">Next road inspection</div>
+                <div class="col-xs-8">
+                    <span data-bind="text: window.moment(next_inspection).format('D MMM YYYY')"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: source.provided_by">
+                <div class="col-xs-4 infoWindowLabel">Information provided by</div>
+                <div class="col-xs-8">
+                    <span data-bind="if: source.provided_by_url">
+                        <a data-bind="attr: { href: source.provided_by_url }"><span data-bind="text: source.provided_by"></span></a>
+                    </span>
+                    <span data-bind="ifnot: source.provided_by_url">
+                        <span data-bind="text: source.provided_by"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="infoWindowSection">
+            <div class="row" data-bind="if: image">
+                <div class="col-xs-4 infoWindowLabel">Image</div>
+                <div class="col-xs-8">
+                    <img class="event-image" data-bind="attr: {src: image}" />
+                </div>
+            </div>
+        </div>
+        <div class="infoWindowSection">
+            <div class="row">
+                <div class="col-xs-4 infoWindowLabel">Event ID</div>
+                <div class="col-xs-8">
+                    <div><span data-bind="text: id"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoWindowSection">
+            <div class="row">
+                <div class="col-xs-4 infoWindowLabel">&nbsp;</div>
+                <div class="col-xs-8">
+                    <p class="copy-link-container">
+                        <span class="do-not-show" style="color: red;">The link has not been copied as your browser doesn't support it. Please copy the link from below.</span>
+                        <textarea class="collapsed-view" data-bind="value: displayUrl" readonly="readonly"></textarea>
+                        <a data-bind="click: $parent.copyLink" tooltip="Copy">Copy Link</a>
+                        <span class="copied-message">Copied</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-bind="if: openedAsModal" class="iwModalCloseBar text-right">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+    </div>
+
+    <div class="infoWindowAlertFooter" data-bind="if: event_priority === 'Red Alert'">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="infoWindowAlertLable"><span>&nbsp;</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="trafficCamInfoTemplate">
+    <div class="infoWindowHeader traffic">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- ko if: feature().properties.featureType === 'CAMERA' -->
+                    <span>Traffic camera</span>
+                    <!-- /ko -->
+                    <!-- ko if: feature().properties.featureType === 'FLOODCAMERA' -->
+                    <span>Flood camera</span>
+                    <!-- /ko -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="infoWindowSubHeader">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 camera-direction-container">
+                    <div>
+                        <img data-img-fallback="images/cameras/image-not-available.png" data-bind="attr: {src: feature().properties.directionIconUrl }" />
+                    </div>
+                    <div class="camera-direction">
+                        <span>Direction:</span><span data-bind="text: feature().properties.directionIconDescription"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- ko if: feature().properties.image_sourced_from -->
+            <div class="row" style="padding-top: 10px;">
+                <div class="col-xs-12">
+                    <span>Image sourced from: </span><span data-bind="text: feature().properties.image_sourced_from"></span>
+                </div>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+
+    <div class="infoWindowBody">
+        <div class="container-fluid">
+            <div class="infoWindowSection">
+                <div class="row">
+                    <div class="col-xs-12" style="height: 320px;">
+                        <img data-img-fallback="images/cameras/image-not-available.png" data-bind="imgLoader: fileName" alt="" class="thumbnail thumbnail-fixed-height infoWindowCameraImage img-responsive" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="infoWindowSection">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <span data-bind="text: feature().properties.description"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="infoWindowSection">
+                <div class="row">
+                    <div class="col-xs-12 text-center extra-information">
+                        <span data-bind="text: feature().properties.extra_info"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="infoWindowSection">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="infoWindowButtonBar pull-left">
+                            <span>
+                                <button type="button" class="btn btn-primary" data-bind="click: $root.refreshImageClicked,
+                                      visible: (feature().properties.featureType !== 'FLOODCAMERA')">
+                                    Refresh
+                                </button>
+                            </span>
+                        </div>
+
+                        <div data-bind="if: openedAsModal" class="iwModalCloseCameraBar text-right pull-right">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+
+            <!-- ko if: feature().properties.isCustom -->
+            <div class="infoWindowSection">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="disclaimer"><a href="more/Disclaimer/index.html" target="_blank">The content in this image is provided by a third party for which the Department is not responsible.</a></span>
+                    </div>
+                </div>
+            </div>
+            <!-- /ko -->
+            <!-- ko ifnot: feature().properties.isCustom -->
+            <div class="infoWindowSection">
+                <!-- ko ifnot: feature().properties.extra_info -->
+                <div class="row">
+                    <div class="col-xs-12" data-bind="visible: feature().properties.featureType == 'CAMERA' || window.isFloodCameraWindowSecondsLabelVisible">
+                        <span>New images available every 60 seconds.</span>
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+            <!-- /ko -->
+            <br class="clearfix" />
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="DumpPointInfoTemplate">
+    <div class="infoWindowHeader dump-point">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <span>RV Dump Point</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="infoWindowBody">
+        <div class="container-fluid">
+            <div class="infoWindowSection">
+                <div class="row">
+                    <div class="col-xs-4 infoWindowLabel"><div>Location</div></div>
+                    <div class="col-xs-8">
+                        <span data-bind="if: feature().properties.name">
+                            <span data-bind="text: feature().properties.name"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="infoWindowSection">
+                <div class="row">
+                    <div class="col-xs-4 infoWindowLabel"><div style="width: 200px">Location details</div></div>
+                    <div class="col-xs-8">
+                        <span data-bind="if: feature().properties.description">
+                            <span data-bind="text: feature().properties.description"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-bind="if: openedAsModal" class="iwModalCloseBar text-right">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+    </div>
+</script>
+
+<script type="text/html" id="BlackSpotInfoTemplate">
+    <div class="infoWindowHeader black-spot">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <span>High Risk Crash Zone</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="infoWindowBody">
+        <div class="container-fluid">
+            <div class="infoWindowSection" data-bind="if: feature().properties.Suburb">
+                <div class="row">
+                    <div class="col-xs-4 infoWindowLabel"><div>Suburbs / Localities</div></div>
+                    <div class="col-xs-8">
+                        <span data-bind="if: feature().properties.Suburb">
+                            <span data-bind="text: feature().properties.Suburb"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="infoWindowSection" data-bind="if: feature().properties.road_name">
+                <div class="row">
+                    <div class="col-xs-4 infoWindowLabel"><div>Roads</div></div>
+                    <div class="col-xs-8">
+                        <span data-bind="if: feature().properties.road_name">
+                            <span data-bind="html: feature().properties.road_name"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="infoWindowSection">
+                <div class="row">
+                    <div class="col-xs-4 infoWindowLabel"><div style="width: 200px">Location details</div></div>
+                    <div class="col-xs-8">
+                        <span data-bind="if: feature().properties.description">
+                            <span data-bind="text: feature().properties.description"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-bind="if: openedAsModal" class="iwModalCloseBar text-right">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+    </div>
+</script>
+
+<script type="text/html" id="RestStopInfoTemplate">
+    <div class="infoWindowHeader rest-stop">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <span data-bind="text: feature().properties.headerText"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="infoWindowBody">
+        <div class="container-fluid">
+            <div class="infoWindowSection">
+                <div class="row">
+                    <div class="col-xs-4 infoWindowLabel">
+                        <div>Type</div>
+                    </div>
+                    <div class="col-xs-8">
+                        <span data-bind="text: feature().properties.restStopType"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="infoWindowSection">
+                <div class="row">
+                    <div class="col-xs-12 infoWindowLabel">Facilities</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div>
+                            <span class="hasFeature" data-bind="if: feature().properties.hasToilet"><span class="halflings halflings-ok"></span></span>
+                            <span class="hasntFeature" data-bind="if: !feature().properties.hasToilet"><span class="halflings halflings-remove"></span></span>
+                            <span>Toilet</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div>
+                            <span class="hasFeature" data-bind="if: feature().properties.hasDisabledToilet"><span class="halflings halflings-ok"></span></span>
+                            <span class="hasntFeature" data-bind="if: !feature().properties.hasDisabledToilet"><span class="halflings halflings-remove"></span></span>
+                            <span>Disabled toilet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="infoWindowSection">
+                <div class="row">
+                    <div class="col-xs-4 infoWindowLabel">
+                        <div>Water supply</div>
+                    </div>
+                    <div class="col-xs-8">
+                        <span data-bind="text: feature().properties.Wsupply"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-bind="if: openedAsModal" class="iwModalCloseBar text-right">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+    </div>
+</script>
+
+<script type="text/html" id="TruckRestrictionInfoTemplate">
+    <div class="infoWindowHeader truck-restriction">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <span data-bind="text: feature().properties.name"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="infoWindowBody">
+        <div class="container-fluid">
+            <div class="infoWindowSection" data-bind="if: feature().properties.suburbs">
+                <div class="row">
+                    <div class="col-xs-4 infoWindowLabel"><div>Suburbs / Localities</div></div>
+                    <div class="col-xs-8">
+                        <span data-bind="if: feature().properties.suburbs">
+                            <span data-bind="text: feature().properties.suburbs"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="infoWindowSection" data-bind="if: feature().properties.name">
+                <div class="row">
+                    <div class="col-xs-4 infoWindowLabel"><div>Roads</div></div>
+                    <div class="col-xs-8">
+                        <span data-bind="if: feature().properties.name">
+                            <span data-bind="html: feature().properties.name"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="infoWindowSection">
+                <div class="row">
+                    <div class="col-xs-4 infoWindowLabel"><div style="width: 200px">Location details</div></div>
+                    <div class="col-xs-8">
+                        <span data-bind="if: feature().properties.description">
+                            <span data-bind="html: feature().properties.description"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- ko if: feature().properties.moreinformation -->
+            <div class="infoWindowSection">
+                <div class="row">
+                    <div class="col-xs-4 infoWindowLabel"><div style="width: 200px">More Information</div></div>
+                    <div class="col-xs-8">
+                        <span data-bind="if: feature().properties.moreinformation">
+                            For more information refer to TMR webpage:
+                            <a data-bind="attr: {href: feature().properties.moreinformation}, text: feature().properties.moreinformation" style="word-break: break-word;" target="_blank"></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+    <div data-bind="if: openedAsModal" class="iwModalCloseBar text-right">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+    </div>
+</script>
+
+<script type="text/html" id="NoTrafficImpactTemplate">
+    <div class="roadeventIcon">
+        <!-- ko if: properties.displayIconUrl -->
+        <a href="#" title="Click to view the impact details">
+            <img data-bind="attr: { src: properties.displayIconUrl }" alt="Click to view the impact details">
+        </a>
+        <!-- /ko -->
+    </div>
+    <div class="trafficImpactInfo">
+        <!-- ko ifnot: properties.isRedAlert -->
+        <span title="Click to view the impact on our map" data-bind="text: properties.eventDisplaySummary"></span>
+        <!-- /ko -->
+        <!-- ko if: properties.isRedAlert -->
+        <span title="Click to view the impact on our map" data-bind="html: properties.eventDisplaySummary"></span>
+        <!-- /ko -->
+    </div>
+</script>
+
+<script type="text/html" id="TrafficImpactTemplate">
+    <div class="trafficImpactIcons">
+        <a href="#" title="Click to view the impact details" data-bind="visible: properties.displayIconUrl">
+            <!-- ko ifnot: properties.isRedAlert -->
+            <img data-bind="attr: { src: properties.impactIconUrl }" alt="Click to view the impact details">
+            <!-- /ko -->
+
+            <img data-bind="attr: { src: properties.displayIconUrl }" alt="Click to view the impact details">
+        </a>
+    </div>
+    <div class="trafficImpactInfo">
+        <!-- ko ifnot: properties.isRedAlert -->
+        <span title="Click to view the impact on our map" data-bind="text: properties.eventDisplaySummary"></span>
+        <!-- /ko -->
+        <!-- ko if: properties.isRedAlert -->
+        <span title="Click to view the impact on our map" data-bind="html: properties.eventDisplaySummary"></span>
+        <!-- /ko -->
+    </div>
+</script>
+  </div>
+
+  <!-- dom for the announcement modal or overlay -->
+  <div id="modalOrOverlay">
+      <div class="modal fade" tabindex="-1" role="dialog" data-bind="">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"><i class="glyphicons glyphicons-remove" aria-hidden="true"></i></button>
+                      <h4 class="modal-title">Announcement</h4>
+                  </div>
+                  
+                  <div class="modal-body">
+                      <button type="button" class="close" data-dismiss="modal"><i class="glyphicons glyphicons-remove" aria-hidden="true"></i></button>
+                      <div data-bind="html: content"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="overlay" style="display: none;" data-bind="visible: visible">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-xs-12">
+                      <button type="button" class="close" data-bind="click: close"><i class="glyphicons glyphicons-remove" aria-hidden="true"></i></button>
+                      <div data-bind="html: content"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- dom for the lookupInfo modal or overlay -->
+  <div id="lookupInfoModalOrOverlay">
+      <div class="modal fade" tabindex="-1" role="dialog" data-bind="">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"><i class="glyphicons glyphicons-remove" aria-hidden="true"></i></button>
+                      <h4 class="modal-title">Lookup Info</h4>
+                  </div>
+
+                  <div class="modal-body">
+                      <button type="button" class="close" data-dismiss="modal"><i class="glyphicons glyphicons-remove" aria-hidden="true"></i></button>
+                      <div data-bind="html: content"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="overlay" style="display: none;" data-bind="visible: visible">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-xs-12">
+                      <button type="button" class="close" data-bind="click: close"><i class="glyphicons glyphicons-remove" aria-hidden="true"></i></button>
+                      <div data-bind="html: content"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer" role="contentinfo" aria-labelledby="landmark-footer" style="width: 100%">
+    <h2 id="landmark-footer" class="sr-only">Site Footer</h2>      
+      <div class="row" style="padding-right: unset; width: 100%;">
+          <div class="col-xs-12 col-md-12 col-lg-7">
+              <ul>
+                  <li>
+                      <a href="/more/Copyright">Copyright</a> 
+                      <small class="visible-print-inline"> ( http://www.qldtraffic.qld.gov.au/More/Copyright )</small> |
+                  </li>
+                  <li>
+                      <a href="/more/Disclaimer">Disclaimer</a>
+                      <small class="visible-print-inline"> ( http://www.qldtraffic.qld.gov.au/More/Disclaimer.html )</small> |
+                  </li>
+                  <li>
+                      <a href="/more/Privacy">Privacy</a>
+                      <small class="visible-print-inline"> ( http://www.qldtraffic.qld.gov.au/More/Privacy.html )</small> |
+                  </li>
+                  <li>
+                      <a href="http://www.rti.qld.gov.au/">Right to information</a>
+                      <small class="visible-print-inline"> ( http://www.rti.qld.gov.au/ )</small> |
+                  </li>
+                  <li>
+                      <a href="/more/Help/Accessibility">Accessibility</a>
+                      <small class="visible-print-inline"> ( http://www.qldtraffic.qld.gov.au/More/Help/Accessibility.html )</small> |
+                  </li>
+                  <li>
+                      <a href="https://www.qld.gov.au/about/government-jobs/">Jobs in Queensland Government</a>
+                      <small class="visible-print-inline"> ( https://www.qld.gov.au/about/government-jobs/ )</small> |
+                  </li>
+                  <li>
+                      <a href="http://www.qld.gov.au/languages/">Other languages</a>
+                      <small class="visible-print-inline"> ( http://www.qld.gov.au/languages/ )</small>
+                  </li>
+              </ul>
+              <p style="margin-left: 7px;">&copy; The State of Queensland (Department of Transport and Main Roads) 2010 - 2025
+                  <span>
+                        <a href="http://www.qld.gov.au/" accesskey="1">Queensland Government</a><small class="visible-print-inline"> ( http://www.qld.gov.au/ )</small>
+                  </span>
+              </p>
+          </div>
+          <div class="col-xs-12 col-md-12 col-lg-5">
+              <div class="footer-images1" style="">
+                  <div style="">
+
+                      <a id="qg-coa" href="http://www.qld.gov.au/">
+                          <!--[if gte IE 7]><!-->
+                          <img src="/images/cue/qg-coa.svg" alt="Queensland Government" class="hidden-xs hidden-sm hidden-print logo">
+                          <img src="/images/cue/qg-coa-stacked.svg" alt="Queensland Government" style="display: none;" class="visible-xs visible-sm hidden-print logo">
+                          <!--<![endif]-->
+                          <!--[if lte IE 6]>
+                          <img src="images/cue/qg-coa-ie6.png" width="287" height="50" alt="Queensland Government" class="hidden-print"/>
+                          <![endif]-->
+                          <img src="/images/cue/qg-coa-print.png" class="visible-print-block" alt="">
+                      </a>
+                      
+                      <a accesskey="2" class="site-name" href="/index.html">
+                          <img src="/images/cue/title_tmr.png" alt="Department of Transport and Main Roads" style="width: 200px;">
+                      </a>
+                  
+                      
+                  </div>
+              </div>
+<!--              <ul class="footer-images">-->
+<!--                  <li>-->
+<!--                      <a accesskey="2" class="site-name" href="/index.html">-->
+<!--                          <img src="/images/cue/title_tmr.png" alt="Department of Transport and Main Roads" style="">-->
+<!--                      </a>-->
+<!--                  </li>-->
+<!--                  <li>-->
+<!--                      <a id="qg-coa" href="http://www.qld.gov.au/">-->
+<!--                          &lt;!&ndash;[if gte IE 7]>&lt;!&ndash;>-->
+<!--                          <img src="/images/cue/qg-coa.svg" alt="Queensland Government" class="hidden-xs hidden-sm hidden-print logo">-->
+<!--                          <img src="/images/cue/qg-coa-stacked.svg" alt="Queensland Government" style="display: none;" class="visible-xs visible-sm hidden-print logo">-->
+<!--                          &lt;!&ndash;<![endif]&ndash;&gt;-->
+<!--                          &lt;!&ndash;[if lte IE 6]>-->
+<!--                          <img src="images/cue/qg-coa-ie6.png" width="287" height="50" alt="Queensland Government" class="hidden-print"/>-->
+<!--                          <![endif]&ndash;&gt;-->
+<!--                          <img src="/images/cue/qg-coa-print.png" class="visible-print-block" alt="">-->
+<!--                      </a>-->
+<!--                  </li>-->
+<!--              </ul>-->
+          </div>
+      </div>
+      <a href="/more/index.html" accesskey="5" style="display: none;">More</a>
+  </footer>
+
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/lib/jss/jss.js?b=1752627244288"></script>
+  <script src="/lib/jquery/dist/jquery.min.js?b=1752627244288"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js?b=1752627244288"></script>
+  <script src="/lib/knockout/dist/knockout.js"></script>
+  <script src="/lib/bower-knockout-mapping/dist/knockout.mapping.js?b=1752627244288"></script>
+  <script src="/lib/knockout-postbox/build/knockout-postbox.js?b=1752627244288"></script>
+  <script src="/lib/moment/moment.js?b=1752627244288"></script>
+  <script src="/lib/customevent-polyfill/customevent-polyfill.min.js?b=1752627244288"></script>
+  <script src="/scripts/vendor/startswith.js?b=1752627244288"></script>
+  <script src="/scripts/vendor/linq.min.js?b=1752627244288"></script>
+  <script src="/scripts/qld-traffic/ko.bindingHandlers.userLocation.js?b=1752627244288"></script>
+  <script src="/scripts/qld-traffic/common.js?b=1752627244288"></script>
+  <script src="/scripts/qld-traffic.js?b=1752627244288"></script>
+  
+  <script src="/scripts/qld-traffic/header-pack.js?b=1752627244288"></script> 
+  <script src="/scripts/infobubble.js?b=1752627244288"></script> 
+  <script src="/scripts/qld-traffic/map-view.js?b=1752627244288"></script> 
+  <script src="/scripts/qld-traffic/return-to-top.js?b=1752627244288"></script> 
+  <script src="scripts/qld-traffic/ko.bindingHandlers.imgLoader.js?b=1752627244288"></script> 
+
+  <!-- <script src="Scripts/qld-traffic/UserLocation.js"></script> -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAVaKJzUSkjeSZ-wiQeJdyUSMenDOmM_k&callback=fireMapLoaded&libraries=places&v=3.61"
+    type="text/javascript"></script>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', trackingId, 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-TCQL3Q" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <script>
+    (function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TCQL3Q');
+  </script>
+  <!-- End Google Tag Manager -->
+</body>
+
+</html>
