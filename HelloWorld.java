@@ -1,6 +1,12 @@
+
+import java.util.Scanner;
+
 public class HelloWorld {
     public static void main(String[] args) {
-        Age = system.in.nextInt();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("enter");
+        int Age = sc.nextInt();
         System.out.println(Age);
+        sc.close();
     }
 }
